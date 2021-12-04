@@ -1,0 +1,16 @@
+apiVersion: v1  
+kind: PersistentVolume
+metadata: 
+  name: homer 
+  labels: 
+    app: homer
+spec: 
+  capacity: 
+    storage: 1Gi 
+  accessModes: 
+  - ReadWriteMany 
+  persistentVolumeReclaimPolicy: Retain 
+  nfs: 
+    path: /home/sistemas/mountpoints/homer 
+    server: 10.100.10.14 
+    readOnly: false
